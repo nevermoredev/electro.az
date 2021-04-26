@@ -1,0 +1,84 @@
+main.main_products
+
+	// BASKET
+	section.basket 
+		.container 
+			.row.row_justify_center
+				form.basket_wrap 
+					.basket_wrap_title 
+						h1.h2 Оформление товара 
+					
+					// BASKET REGISTRATION 
+					.bakset_reg_user 
+						h4.basket_subtitle Введите свои данные 
+						.bakset_reg_user_row 
+							input(type="text", name="user_name", placeholder="Имя *" required)
+						.bakset_reg_user_row 
+							input(type="number", name="user_number", placeholder="Телефон *" required)
+						.bakset_reg_user_row 
+							input(type="text", name="user_email", placeholder="Email *" required)
+						.bakset_reg_user_row 
+							textarea(placeholder="Комментарий:")
+						.bakset_reg_user_row 
+							.filter_checkbox_wrap 
+								input(type="checkbox")
+								span Подписаться на рассылку акций и новостей
+					// END BASKET REGISTRATION 
+
+					// BASKET PAYING 
+					.basket_user_pay 
+						h4.basket_subtitle Выберите способ оплаты:
+						.basket_user_paying_row 
+							.filter_checkbox_wrap 
+								input(type="checkbox")
+								span Наличными
+							.filter_checkbox_wrap 
+								input(type="checkbox")
+								span Visa | MasterCard
+							.filter_checkbox_wrap 
+								input(type="checkbox")
+								span Bolkart | Birkart
+						.basket_user_pay_row 
+							input(type="text", name="user_address", placeholder="Адресс доставки *" required)
+						.basket_user_pay_total_row 
+							p.text 
+								span Общая стоимость: 
+								span.total_basket_price 
+									span 650  
+									span azn
+							button.general_btn(type="submit") ОФОРМИТЬ ЗАКАЗ
+					// END BASKET PAYING 
+					
+					
+					// BASKET PRODUCTS 
+					.basket_products 
+						h4.basket_subtitle Товар 
+						.basket_products_row 
+							h4.h4 Apple
+							h3.h3 iPhone X 3/64GB
+						.category_filtering_content_thumb 
+							img.lazyload.blur_up(data-src="images/main/category/2.png", alt="Electro company products")
+						.basket_products_price_row
+							.basket_products_count 
+								p.text КОЛИЧЕСТВО:
+								.basket_products_count_wrap 
+									input(type="number", name="products_item" value="1" min="1" max="10")
+									p.text шт. 
+							.basket_products_price  
+								.basket_products_price_col 
+									p.text_title Цена: 
+									p.text.basket_main_price 
+										span 650 
+										span azn 
+								.basket_products_price_col 
+									p.text_title Итог: 
+									p.text.total_basket_price_products
+										span 650 
+										span azn 
+					// END BASKET PRODUCTS 
+
+
+					// END BASKET PRODUCTS 
+
+
+	// END BASKET

@@ -1,0 +1,64 @@
+// NAVIGATION 
+	// ABOUT PAGE
+	//  ABOUT DESCR
+	//  ABOUT WALL
+
+
+
+// ABOUT PAGE
+.about_page 
+	.row 
+		width: 100%
+
+//  ABOUT DESCR
+.about_descr 
+	+col()
+	+size(5)
+	+size-xl(5)
+	+size-lg(6)
+	+size-md(8)
+	+size-sm(12)
+	padding: em(20px)
+	padding-left: em(40px)
+	padding-right: em(40px)
+	border-radius: 5px
+	background: $white 
+	box-shadow: 0 0 5px 0 rgba($grey, 0.2)
+	.h1 
+		+electro-sb
+		font-size: em(25px)
+	.text 
+		margin-bottom: em(20px)
+		color: $black 	
+
+.about_wall 
+	+col()
+	+size(4)
+	+size-xl(5)
+	+size-lg(6)
+	+size-md(8)
+	+size-sm(12)
+	position: relative
+	border-radius: 5px
+	background: $white
+	overflow: hidden
+	box-shadow: 0 0 10px 0 rgba($grey, 0.2)
+	+md-block()
+		min-height: 400px
+	img 
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		object-fit: cover  
+
+.about_logo
+	position: relative
+	left: em(-40px)
+	width: 400px
+	height: 100px
+	fill: $search_bg 		
+	+xs-block()
+		width: 100%
+		height: 50px

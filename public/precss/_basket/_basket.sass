@@ -1,0 +1,169 @@
+// NAV 
+	// REG
+	// PAY
+	// PRODUCTS 
+
+
+
+// REG
+.basket
+	+xl-block()
+		.row_justify_center
+			width: 100%
+.basket_wrap
+	+col()
+	+size(9)
+	+size-xl(12)
+	display: flex
+	flex-wrap: wrap
+	width: 100%
+	padding-left: em(20px)
+	padding-right: em(20px)
+	padding-top: em(50px)
+	padding-bottom: em(50px)
+	background: $white 
+.basket_wrap_title
+	width: 100%	
+	.h2 
+		text-align: center
+		font-size: em(30px)
+		color: $search_bg 
+.basket_subtitle
+	+electro-sb
+	margin-bottom: em(10px)
+	font-size: em(20px)
+	color: $search_bg 
+.bakset_reg_user_row
+	margin-bottom: em(10px)
+	.filter_checkbox_wrap
+		width: 85%
+		input 
+			width: 100%
+		span 
+			line-height: 1.3
+	input, 
+	textarea 
+		width: 85%
+		padding: em(15px) 0
+		font-size: 16px
+		+electro-r
+		color: $acceptor_blue
+		text-indent: em(15px)
+		border: 1px solid rgba($acceptor_blue, 0.5)
+		+xl-block()
+			width: 100%
+		&::placeholder 
+			font-size: 16px
+	textarea 
+		min-height: 150px
+
+	
+.bakset_reg_user,
+.basket_user_pay,
+.basket_products
+	+col()
+	+size(4)
+	+size-lg(12)
+	+lg-block()
+		margin-bottom: em(50px)
+
+
+
+// PAY
+.basket_user_pay_row
+	input 
+		margin-top: em(20px)
+		width: 85%
+		padding: em(15px) 0
+		font-size: 16px
+		+electro-r
+		color: $acceptor_blue
+		text-indent: em(15px)
+		border: 1px solid rgba($acceptor_blue, 0.5)
+.basket_user_pay_total_row
+	display: flex
+	justify-content: center
+	flex-direction: column
+	align-items: center
+	width: 85%
+	margin-top: em(165px)
+	.text
+		margin-bottom: em(10px)
+		> span 
+			&:first-child 
+				margin-right: em(10px)
+				color: $search_bg 
+			&:last-child
+				+electro-sb
+				color: $pink
+				font-size: em(24px) 
+.total_basket_price
+	span 
+		&:first-child 
+			margin-right: 3px
+
+
+	
+// PRODUCTS 
+.basket_products_row
+	.h4 
+		font-size: em(24px)
+		color: $acceptor_blue	
+	.h3
+		font-size: 15px
+		color: $search_bg 	
+.basket_products_price_row			
+	display: flex
+	align-items: center
+	justify-content: space-between
+	width: 100%
+	+xl-block()
+		justify-content: flex-start 
+		align-items: flex-start
+		margin-top: em(20px)
+		flex-direction: column 
+.basket_products_count
+	.text 
+		+electro-sb
+		font-size: em(18px)
+		text-transform: uppercase	
+		color: $acceptor_blue
+.basket_products_count_wrap
+	display: flex
+	align-items: center		
+.basket_products_price_col
+	display: flex	
+	align-items: center
+	min-width: 150px
+	justify-content: space-between
+	&:last-child 
+		.text 
+			font-size: em(26px)
+	.text_title
+		margin-right: em(10px)
+		+electro-sb
+		font-size: em(18px)
+		text-transform: uppercase	
+		color: $acceptor_blue
+	.text 
+		text-align: right
+		+electro-sb
+		font-size: em(24px)
+		color: $pink 
+		span 
+			&:first-child 
+				margin-right: em(2px)
+
+.basket_products_count_wrap		
+	+xl-block()
+		margin-bottom: em(10px)
+	input 
+		width: 50px
+		padding: em(15px) 0
+		margin-right: em(10px)
+		font-size: 16px
+		+electro-r
+		color: $acceptor_blue
+		text-indent: em(15px)
+		border: none 
+		border-bottom: 1px solid rgba($acceptor_blue, 0.5)

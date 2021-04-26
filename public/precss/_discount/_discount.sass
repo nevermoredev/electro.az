@@ -1,0 +1,100 @@
+// Discount
+.discount_page_offset,
+.cat_page_offset
+	margin-top: em(30px)	
+	+to(1900px)
+		margin-top: em(0px)
+.discount_page
+	.row 
+		width: 100%
+	.products_category_col,
+	.products_category_box
+		position: relative
+		width: 100%
+		// margin-bottom: 10px
+		outline: none !important
+	.products_category_box
+		min-height: 300px
+		background: $white 
+		overflow: hidden
+		&:hover 
+			.products_category_box_wrap
+				transform: translateY(-2px)
+				box-shadow: 0 0 5px 0 rgba($grey, 0)
+			.category_filtering_content_discount,
+			.category_filtering_content_discount_text
+				background: $pink
+	.products_category_box_wrap	
+		// min-height: 155px
+		height: 100%
+		+to(1200px)
+			padding-top: em(40px)
+		img 
+			min-height: 76px
+.products_category_slider
+	position: relative
+	display: flex
+	width: 100%		
+	outline: none !important
+	&.slick-slider
+		margin-bottom: 0
+	.slick-dots
+		bottom: em(0px)	
+		+xs-block()
+			bottom: -30px
+	.slick-arrow 
+		position: absolute
+		top: 50%
+		z-index: 2
+	.slick_prev_btn,
+	.slick_next_btn
+		width: 40px
+		height: 40px
+		margin-top: -20px
+		opacity: 1
+		+trs
+		cursor: pointer
+		&:hover 
+			opacity: 1
+	.slick_prev_btn
+		left: -40px
+		transform: rotate(-180deg)
+		background:  url(../images/main/icon/arrow1.svg) no-repeat center 
+	.slick_next_btn
+		right: -50px
+		background:  url(../images/main/icon/arrow1.svg) no-repeat center 
+
+.products_category_slider_items_wrap
+	display: flex		
+	flex-direction: column
+	outline: none !important
+.products_category_slider_items
+	padding: em(20px)
+	outline: none !important
+.category_filtering_content_discount_text
+	bottom: 0
+	top: auto 
+	left: 0 
+	transform: rotate(-45deg) translateY(50px) translateX(75px)
+
+.cat_page_offset
+	margin-top: em(0px)	
+	+to(1900px)
+		margin-top: 0
+	.products_category_box
+		overflow: visible
+	.products_category_box_wrap	
+		// min-height: 195px
+		padding-top: em(50px)
+		height: 100%
+		img 
+			min-height: 136px
+	
+
+.discount_page
+	.category_filtering_content_discount
+		padding: 0
+		height: max-content
+		.text 
+			padding: em(5px)
+			font-size: 12px

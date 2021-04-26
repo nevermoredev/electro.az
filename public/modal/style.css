@@ -1,0 +1,21 @@
+.modal_general {
+    background: none!important;
+}
+.modal_general .video_modal_container p  {
+    padding: 30px;
+    font-size: 30px;
+    color: #fff;
+}
+.modal_general .video_modal_container  {
+    text-align: center;
+    height: auto;
+    font-weight: bold;
+    background: #011e41;
+}
+
+@media (max-width: 800px) {
+    .modal_general .video_modal_box_wrap {
+        padding: 20px;
+        box-sizing: border-box;
+    }
+}

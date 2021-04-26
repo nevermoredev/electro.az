@@ -1,0 +1,935 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+@import "settings"
+@import "smart-grid"
+@import "_category/_category"
+@import "_products/_products"
+@import "_basket/_basket"
+@import "_discount/_discount"
+@import "_about/_about"
+@import "_contacts/_contacts"
+  
+
+
+// NAVIGATION 
+	//  HEADER 
+	//  MAIN 
+	//  SLIDER 
+	//  CATEGORY 
+	//  FOOTER  
+	//  SEARCH PAGE   
+	//  LAZY LOAD   
+
+
+
+
+
+//  HEADER 
+.header 
+	position: fixed 
+	top: 0
+	left: 0
+	z-index: 4
+	width: 100%
+	padding-top: em(20px)
+	padding-bottom: em(20px)
+	color: $white 
+	background: $acceptor_blue 
+	+to(400px)
+		padding-top: 10px
+	+lg-block()
+		padding-top: 0
+		padding-bottom: 0
+	.row 
+		// width: 100%
+	+to(1900px)
+		padding-top: em(10px)
+		padding-bottom: em(10px)
+.logo_box
+	display: flex
+	+to(540px)
+		justify-content: center
+		// width: 100%
+		// margin-bottom: em(20px)
+	+to(400px)
+		margin: auto 
+.logo_ico
+	width: 250px
+	height: 50px
+	fill: $white 
+	+trs 
+	+to(620px)
+		width: 180px
+	+to(400px)
+		width: 300px
+	&:hover 
+		fill: lighten($acceptor_blue, 70%)
+
+.search_box
+	position: relative
+	top: em(9px)
+.search_box,
+.search_mobile 
+	position: relative
+	width: 360px
+	height: 35px 
+	margin-right: em(100px)
+	margin-left: em(40px)
+	+xl-block()
+		display: none
+	input 
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		text-indent: em(15px)
+		padding-right: em(50px)
+		border: none 
+		font-size: 16px 
+		color: $white 
+		background: $search_bg 
+		border: 1px solid $white 
+		border-radius: 5px
+		+trs
+		&::placeholder 
+			color: $white  
+	button
+		position: absolute
+		right: em(20px)
+		top: em(5px)
+		width: 30px
+		height: 30px 
+		border: none 
+		background: none 
+		+trs 
+		cursor: pointer
+		.search_ico
+			+trs
+		&:hover 
+			.search_ico
+				fill: $acceptor_blue				
+.search_mobile
+	position: absolute
+	top: 0
+	left: -1px
+	width: 100%
+	height: 100%
+	margin-right: 0
+	margin-left: 0		
+	button 
+		height: 90%	
+	+from(1700px)
+		display: none!important	
+	+lg-block()
+		height: em(45px)
+		left: 0
+		top: 100%
+		margin-left: 1px
+		input 
+			border-radius: 0
+			border-color: $acceptor_blue
+	+xs-block()
+		height: em(55px)		
+		margin-left: 0
+		button 
+			top: em(5px)
+
+.search_ico
+	width: 22px
+	height: 22px
+	fill: $white 
+	+trs
+.search_box_result
+	position: absolute
+	top: 100%
+	left: 0
+	display: none
+	margin-top: em(10px)
+	width: 100%
+	height: max-content
+	background: $white 
+	+lg-block()
+		margin-top: 0
+.search_box_result_row
+	display: flex
+	align-items: center
+	padding: em(10px)
+	line-height: 1.2
+	border-bottom: 1px solid rgba($grey, 0.3)
+	color: $acceptor_blue
+	+trs 
+	&:last-child 
+		// border: none 
+	&:hover 
+		border-color: rgba($acceptor_blue, 0.5)
+	img 
+		width: 40px
+		margin-right: em(10px)
+		height: 40px
+
+
+.main_nav_menu
+	position: relative 
+	display: flex
+	align-items: center
+	margin-right: auto
+	padding-left: em(20px)
+	padding-right: em(20px)
+	// border-left: 1px solid $white 
+	// border-right: 1px solid $white 
+	+xl-block()
+		margin: 0 auto 
+	+lg-block()
+		position: static
+		margin: 0
+		margin-left: auto	
+	+to(530px)
+		margin-left: 0	
+	ul 
+		display: flex	
+		padding-top: em(5px)
+		+lg-block()
+			display: none
+			&.toggle_mobile_menu 
+				position: absolute
+				top: 100%
+				left: 100%
+				display: block
+				width: max-content
+				margin-top: em(1px)
+				margin-left: em(-210px)
+				padding: em(10px)
+				background: $acceptor_blue 
+		li 
+			&:last-child 
+				a 
+					padding-right: 0
+			&.active_menu_items
+				a 
+					color: $search_bg
+			a 
+				padding-right: em(60px)
+				text-transform: uppercase	
+				color: $white 
+				+trs 
+				+xl-block()
+					padding-right: em(20px)
+				&:hover 
+					color: $search_bg
+
+.callback_link
+	display: flex
+	align-items: center
+	font-size: em(22px)
+	margin-left: em(60px)
+	+electro-sb 
+	font-weight: 400
+	text-transform: uppercase
+	color: $white 
+	+trs 
+	+lg-block()
+		position: relative
+		top: em(-3px)
+	+to(530px)
+		margin-left: 0	
+	.tel_ico
+		+trs
+	&:hover 
+		color: $search_bg 
+		.tel_ico
+			fill: $search_bg
+
+.tel_ico
+	position: relative
+	top: em(1px)
+	width: 20px
+	height: 20px
+	margin-right: em(1px)
+	margin-left: em(1px)
+	fill: $white 
+	+trs
+
+.map_ico
+	width: 20px
+	height: 20px
+	fill: $white 
+	+trs 
+
+
+.contacts_box,
+.search_box_btn,
+.menu_hamburger
+	margin-right: em(10px)
+	a 
+		+trs 
+		.map_ico
+			+trs 
+		&:hover 
+			.map_ico
+				fill: $search_bg 
+.auth_box_icon
+	position: relative
+	cursor: pointer
+	+trs 
+	.map_ico
+		+trs 
+	&:hover 
+		.auth_box_modal
+			opacity: 1
+			pointer-events: all 
+		.map_ico
+			fill: $search_bg 
+.auth_box_modal			
+	position: absolute
+	top: 100%
+	left: em(-165px)
+	width: max-content
+	height: max-content
+	padding-top: em(20px)
+	opacity: 0
+	pointer-events: none 
+	+trs
+.auth_box_modal_wrap
+	width: max-content
+	height: max-content
+	background: $white 
+	+trs 
+	a
+		display: flex
+		align-items: center
+		padding: em(10px)
+		line-height: 1.2
+		border-bottom: 1px solid rgba($grey, 0.3)
+		color: $acceptor_blue
+		+trs
+		&:hover 
+			border-color: rgba($acceptor_blue, 0.5)
+			background: rgba($grey, 0.1)
+
+.lang_box
+	position: relative 
+	top: em(-5px)
+	margin-right: em(10px)
+	margin-left: em(10px)
+	+from(1100px)
+		top: 0 
+	&:after 
+		content: ''
+		position: absolute
+		top: 90% 
+		left: 4.7px
+		width: 0
+		height: 0
+		border: 0 solid transparent
+		border-left-width: 7px
+		border-right-width: 7px
+		border-top: 7px solid $white 
+	select 
+		text-transform: uppercase
+		font-size: 16px 
+		+electro-sb 
+		// padding-bottom: em(7px)
+		color: $white 
+		border: none 
+		cursor: pointer
+		background: none 
+		-moz-appearance: none
+		-webkit-appearance: none
+		outline: none 
+		option 
+			color: $acceptor_blue
+
+.user_interface
+	display: flex
+	align-items: center
+	margin-left: auto 
+	+to(400px)
+		margin: 0 auto 
+		padding-bottom: 20px
+	+lg-block()
+		margin-left: 0
+
+.search_box_btn
+	display: none
+	+xl-block()
+		position: relative
+		top: 5px
+		display: block
+
+.menu_hamburger
+	+from(1100px)
+		display: none
+
+.products_menu
+	+col()
+	+size(3)
+	+size-xl(3)
+	position: relative
+	z-index: 3
+	// min-width: 400px
+	// background: $acceptor_blue 	
+	+xl-block()
+		margin-top: em(40px)
+		box-sizing: border-box
+	+lg-block()
+		display: none
+		&.products_menu_mobile 
+			display: block
+			position: absolute
+			// top: em(0px)
+			left: 0
+			margin-top: em(40px)
+			width: 300px
+			height: max-content 
+	+md-block()
+		&.products_menu_mobile 
+			margin-top: em(90px)
+	+sm-block()
+		&.products_menu_mobile 
+			width: 400px
+	+xs-block()
+		&.products_menu_mobile 
+			position: relative
+			width: 100% 
+			margin-top: 0
+
+.products_menu_lv2,
+.products_menu_lv3
+	position: absolute
+	top: 0
+	z-index: 1
+	left: 99%
+	width: 100%
+	height: max-content 
+	min-height: 100%
+	display: none
+.products_menu_items 
+	+sm-block()
+		flex-wrap: wrap
+		ul 
+			width: 100%	
+.products_menu_lv2
+	+md-block()
+		li 
+			// flex-direction: column
+			flex-wrap: wrap
+			products_menu_lv3
+		.products_menu_items_parent
+			position: relative
+	+xs-block()
+		background: lighten($acceptor_blue, 10%)		
+.products_menu_lv3
+	+xs-block()
+		flex-wrap: wrap
+		background: lighten($acceptor_blue, 20%)		
+.products_menu_main.products_menu_lv3
+	+md-block()
+		position: relative 
+		top: 0 
+		left: 0
+.products_menu_main.products_menu_lv2
+	+sm-block()
+		position: relative 
+		top: 0 
+		left: 0
+
+
+.products_menu_main
+	width: 100%
+	background: $acceptor_blue 
+	li 
+		display: flex
+		align-items: center
+		+lg-block()
+			// position: relative
+		&:hover 
+			> a 
+				color: lighten($grey, 30%)
+				> .menu_arrow
+					fill: lighten($grey, 30%)
+		a 
+			display: flex
+			align-items: center
+			// width: max-content
+			// max-width: em(220px)
+			padding-left: em(20px)
+			padding-right: em(20px)
+			padding-top: em(13px)
+			padding-bottom: em(13px)
+			box-sizing: border-box
+			+electro-sb
+			font-size: em(20px)
+			color: $white
+			+trs
+			+to(1800px)
+				font-size: 16px
+				padding-left: em(10px)
+				padding-right: em(10px)
+				padding-top: em(10px)
+				padding-bottom: em(10px)
+			+lg-block()
+				width: max-content
+				max-width: em(300px)
+				padding-bottom: em(8.5px)	
+				padding-top: em(8.5px)	
+				font-size: 14px
+				img 
+					width: 20px
+					height: 20px
+			img 
+				width: 30px
+				height: 30px
+				margin-right: em(5px)
+.products_menu_items_parent
+	&:hover 
+		> ul 
+			display: block
+
+.main_category_menu_btn
+	+lg-block()
+		margin-top: em(-50px)
+	+md-block()
+		margin-top: 0	
+.menu_arrow
+	width: 15px
+	height: 15px
+	margin-right: em(20px)
+	margin-left: auto
+	fill: $white 
+	+trs
+	+xl-block()
+		width: 15px
+		height: 15px
+	
+//  MAIN 
+.main
+	&.main_overlay 
+		position: relative
+		z-index: 3
+		&:after 
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			z-index: 1
+			width: 100%
+			height: 100%
+			opacity: 0.4
+			background: $black 
+	&.main_overlay_mobile
+		position: relative
+		z-index: 3
+		&:after 
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			z-index: 1
+			width: 100%
+			height: 100%
+			opacity: 0.4
+			background: $black 
+.main,
+.main_category,
+.main_products,
+.main_cat_page,
+.main_discount
+	min-height: 100%
+	padding-bottom: em(100px)
+	padding-top: em(140px)
+	box-sizing: border-box
+	background: $body_bg 
+	+to(1900px)
+		padding-top: em(80px)	
+	+to(1200px)
+		padding-top: em(150px)	
+	+from(1700px)
+		padding-bottom: 0
+		height: 100vh	 
+		overflow: hidden
+.main_category
+	overflow: hidden
+	+to(1900px)
+		padding-top: em(120px)
+	+from(1700px)
+		height: auto 
+		min-height:  auto
+		padding-top: em(150px)
+		padding-bottom: em(100px)
+		overflow: visible
+.main_products
+	.container
+		width: 100%
+	+to(1800px)
+		height: auto 
+		min-height:  auto
+		padding-top: em(150px)
+		padding-bottom: em(100px)
+		overflow: visible
+	+md-block()
+		overflow: hidden	
+.main_cat_page
+	+to(1900px)
+		height: auto 
+		min-height:  auto
+		padding-top: em(150px)
+		padding-bottom: em(100px)
+		overflow: visible
+
+.main_discount
+	+to(1900px)
+		padding-bottom: em(20px)
+
+//  SLIDER 
+.products_slider
+	+col()
+	+size(9)
+	+size-xl(9)	
+	+size-lg(12)	
+	position: relative
+	z-index: 0
+	+xl-block()
+		margin-top: em(40px)
+	+lg-block()
+		margin-top: 0	
+	+xs-block()
+		// +size(12)
+		// width: 100%
+		// margin-left: em(50px)
+	.slick-track,	
+	.slick-list 
+		height: 100%	
+	.slick-arrow 
+		position: absolute
+		top: 50%
+		z-index: 1
+	.slick_prev_btn,
+	.slick_next_btn
+		width: 40px
+		height: 40px
+		margin-top: -20px
+		opacity: 0.5
+		+trs
+		cursor: pointer
+		&:hover 
+			opacity: 0.7
+	.slick_prev_btn
+		left: 10px
+		transform: rotate(-180deg)
+		background: url(../images/main/icon/arrow.svg) no-repeat center/cover 
+	.slick_next_btn
+		right: 10px
+		background: url(../images/main/icon/arrow.svg) no-repeat center/cover 
+
+.products_slider_items_wrap
+	position: relative
+	width: 100%
+	height: 100%
+	overflow: hidden
+	+trs
+	+lg-block()
+		min-height: 420px
+		max-height: 420px
+	img 
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100% 
+		z-index: -1
+		object-fit: cover 
+		+from(1200px)
+			transform: scale(1)
+			animation-name: floating_images
+			animation-duration: 7s 
+			animation-iteration-count: infinite
+		
+.products_slider_items 
+	outline: none 
+	&.slick-current 
+		.slider_text_wrap
+			.h4 
+				transform: translateY(0px)
+			.text 
+				transform: translateY(0px)
+		.btn_products_link		
+			transform: translateY(0px)
+		.products_slider_items_wrap
+			img 
+				+from(1200px)
+					// animation-name: floating_images
+					// animation-duration: 6s 
+					// animation-iteration-count: infinite
+.slider_text_wrap
+	width: em(400px)
+	padding-top: em(20px)
+	+xs-block()
+		width: 90%
+	.h4 
+		padding-top: em(5px)
+		padding-bottom: em(5px)
+		padding-left: em(50px)
+		font-size: em(24px)
+		+electro-sb 
+		transform: translateY(-300px)
+		color: $white 
+		background: rgba($slider_text, 0.9)
+		+trs($time: 2s)
+		+xs-block()
+			padding-left: em(10px)
+	.text 
+		padding-left: em(70px)
+		margin-top: em(5px)
+		margin-bottom: em(10px)
+		transform: translateY(-270px)
+		color: $white 	
+		+trs($time: 2s)
+		+xs-block()
+			padding-left: em(20px)
+.btn_products_link
+	display: flex
+	justify-content: center
+	max-width: 150px
+	padding: em(7px)
+	margin-left: em(70px)
+	color: $white 
+	border-radius: 8px
+	border: 1px solid $white 
+	transform: translateY(-220px)
+	+trs($time: 2s)
+	+xs-block()
+		margin-left: em(10px)
+	&:hover 
+		border-color: $slider_text
+
+@keyframes floating_images
+	0% 
+		transform: scale(1)
+	50% 
+		transform: scale(1.05)
+	100% 
+		transform: scale(1)
+
+
+//  CATEGORY 
+.products_category
+	margin-top: em(50px)	
+	+to(1900px)
+		margin-top: em(20px)
+.products_category_col		
+	display: flex 
+	flex-wrap: wrap	
+	width: calc( 83.3333% )	
+	+xl-block()
+		width: 100%
+.products_category_box
+	+col()
+	+size(2)
+	+size-xl(3)
+	+size-lg(3)
+	+size-md(4)
+	+size-sm(6)
+	+size-xs(6)
+	position: relative
+	display: flex
+	align-items: center
+	justify-content: center
+	flex-direction: column
+	margin-bottom: em(8px)
+	+to(450px)
+		+size-xs(9)
+	+to(400px)
+		+size-xs(10)
+	+xs-block()
+		margin: 0 auto 
+		margin-bottom: em(20px)
+	&:hover 
+		.products_category_box_wrap
+			transform: translateY(-2px)
+			box-shadow: 0 0 5px 0 rgba($grey, 0.2)
+.products_category_box_wrap
+	width: 100%
+	height: 100%
+	padding-top: em(20px)
+	padding-bottom: em(20px)
+	background: $white 
+	border-radius: 8px
+	box-shadow: 0 0 5px 5px rgba($grey, 0.01)
+	+trs
+	+from(1900px)
+		padding-left: em(5px)
+		padding-right: em(5px)
+	img 
+		display: block
+		max-height: 136px
+		height: 100%
+		margin: 0 auto 
+		+trs
+		+xs-block()
+			max-width: 146px
+			// width: 100%
+	.h4 
+		margin-top: em(10px)
+		text-align: center
+		padding: em(10px)
+		font-size: 12px
+		text-transform: uppercase
+		color: $acceptor_blue
+		+xs-block()
+			margin-bottom: em(10px)
+.products_category_box_link
+	display: flex
+	justify-content: center
+	background: $acceptor_blue 
+	text-align: center
+	text-transform: uppercase
+	opacity: 0 
+	pointer-events: none 
+	color: $white
+	+trs
+
+// FOOTER 
+.footer 
+	position: fixed
+	bottom: 0
+	left: 0
+	z-index: 1
+	width: 100%
+	padding-top: em(5px)
+	padding-bottom: em(5px)
+	background: $search_bg 
+	&.footer_category
+		position: static
+	+from(1900px)
+		padding-top: em(10px)
+		padding-bottom: em(10px)
+	+xl-block()
+		position: static
+
+.footer_copyright
+	+col()
+	+size(6)
+	margin-left: auto 
+	display: flex
+	justify-content: flex-end
+	.text 
+		color: $white 
+.footer_social
+	+col()
+	+size(6)
+	display: flex
+	a 
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 30px
+		height: 30px
+		margin-right: em(10px)
+		background: $white 
+		border-radius: 50%		
+		+trs
+		+from(1900px)
+			width: 40px
+			height: 40px
+		.soc_ico
+			+trs 
+		&:hover 
+			background: $acceptor_blue 	
+			.soc_ico
+				fill: $white 
+		&:last-child 
+			margin-right: 0
+.soc_ico
+	width: 15px
+	height: 15px		
+	fill: $search_bg
+	+from(1900px)
+		width: 25px
+		height: 25px
+	
+//  SEARCH PAGE   
+.search 
+	.category_filtering_content
+		+size(12)
+	.category_filtering_content_wrap	
+		+col()
+		+size(2.4)
+		+size-xl(2.4)
+		+size-lg(3)
+		+size-md(4)
+		+size-sm(6)
+		+size-xs(9)
+		+to(1200px)
+			+size-xl(3)
+		+to(400px)
+			+size(12)	
+
+// LAZY LOAD PLUGINS 
+.blur_up
+  -webkit-filter: blur(5px)
+  filter: blur(5px)
+  transition: filter 400ms, -webkit-filter 400ms
+  &.lazyloaded
+    -webkit-filter: blur(0)
+    filter: blur(0)	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

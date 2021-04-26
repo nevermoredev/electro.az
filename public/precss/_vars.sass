@@ -1,0 +1,149 @@
+// Base fonts
+$electro-r:     'electro-r',     Arial,  sans-serif
+$electro-sb:    'electro-sb',    Arial,  sans-serif
+
+
+// Base colors
+$black:                   #000
+$white:                   #ffffff
+$grey:                    #444444
+$pink:                    #f92b8d
+$acceptor_blue:           #011e41
+$main_bg:                 #dfe7ea
+$search_bg:               #7b8a9c
+$body_bg:                 #dfe7ea
+$slider_text:             #5f473a
+$green:                   #19ff19
+
+
+// Base mixin
+=electro-r
+	font-family: $electro-r
+	font-weight: 400
+=electro-sb
+	font-family: $electro-sb
+	font-weight: 400
+
+
+
+// calc px to em
+$context: 16px
+@function em($pixels, $context: 16px)
+	@return #{$pixels/$context}em
+
+
+		
+// general btn
+=general-btn
+	display: inline-block
+	padding: em(14px) em(31px)
+	+electro-sb
+	font-size: em(18px)
+	color: $white
+	text-transform: uppercase
+	background: $acceptor_blue
+	transition: all 0.35s linear
+	cursor: pointer
+	border: none 
+	&:hover
+		background: lighten($acceptor_blue, 15%)
+
+
+// background setting's
+=bg-setting
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: center center
+
+// Transition snippet's
+=trs($all: all, $time: 0.3s, $effect: linear, $timeout: 0s)
+	transition: $all $time $effect $timeout
+
+// Main setting's
+::placeholder
+	color: #666
+
+::selection
+	background-color: $acceptor_blue
+	color: #fff
+	
+input::-ms-clear 
+	display: none 
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration
+	display: none
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+	-webkit-appearance: none
+	margin: 0
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $electro-r
+	overflow-x: hidden
+	input, textarea
+			border: #666 1px solid
+			outline: none
+			&:focus:required:invalid
+				border-color: $pink
+			&:required:valid
+				border-color: $green
+
+ul,li,h1,h2,h3,h4,h5,h6,p
+	margin: 0
+	padding: 0
+
+li
+	list-style-type: none
+a
+	text-decoration: none
+	&:hover
+		text-decoration: none	
+
+
+.img-responsive	
+	display: block
+	max-width: 100%
+	height: auto
+
+.text-center
+	text-align: center
+			
+\::-webkit-scrollbar-button
+  background-image: url('')
+  background-repeat: no-repeat
+  width: 6px
+  height: 0px
+
+\::-webkit-scrollbar-track
+  background-color: rgba($grey, 0.35)
+  box-shadow: 0px 0px 3px rgba($grey, 0.35) inner
+
+\::-webkit-scrollbar-thumb
+  -webkit-border-radius: 0
+  border-radius: 0
+  background-color: $acceptor_blue
+  box-shadow: 0px 1px 1px $acceptor_blue inset
+  background-image: url('https://yraaa.ru/_pu/24/59610063.png')
+  background-position: center
+  background-repeat: no-repeat
+
+\::-webkit-resizer
+  background-image: url('')
+  background-repeat: no-repeat
+  width: 6px
+  height: 0px
+
+\::-webkit-scrollbar
+  width: 6px			
+  height: 6px			

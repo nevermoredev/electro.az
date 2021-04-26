@@ -1,0 +1,117 @@
+include ../mixins/_mixins
+
+header.header 
+	.container 
+		.row.row_align_center.row_justify_between
+			// LOGO 
+			a.logo_box(href="#")
+				+icon('logo', 'logo_ico lazyload blur_up')
+			// END LOGO 
+
+			// SEARCH
+			form.search_box 
+				input(type="search" placeholder="Search")
+				button(type="submit") 
+					+icon('search', 'search_ico lazyload blur_up')
+				.search_box_result 
+					a(href="#").search_box_result_row 
+						img.lazyload.blur_up(data-src="images/main/index/cat1.png", alt="Search products category images") 
+						h4.h4 iPhone XS MAX Pro 
+					a(href="#").search_box_result_row 
+						img.lazyload.blur_up(data-src="images/main/index/cat2.png", alt="Search products category images") 
+						h4.h4 iPad XS MAX Pro 
+					a(href="#").search_box_result_row 
+						img.lazyload.blur_up(data-src="images/main/index/cat3.png", alt="Search products category images") 
+						h4.h4 Xiaomi Laptop Max Pro
+			// END SEARCH 
+	
+			// NAVIGATION
+			nav.main_nav_menu 
+
+				// MAIN MENU 
+				ul
+					li.active_menu_items
+						a(href="#") О НАС
+					li
+						a(href="#") обратная связь
+					li
+						a(href="#") компании
+					li
+						a(href="#") магазины
+				// END MAIN MENU
+
+
+
+				// MOBILE SEARCH
+				form.search_mobile 
+					input(type="search" placeholder="Search")
+					button(type="submit") 
+						+icon('search', 'search_ico lazyload blur_up')
+					.search_box_result 
+						a(href="#").search_box_result_row 
+							img.lazyload.blur_up(data-src="images/main/index/cat1.png", alt="Search products category images") 
+							h4.h4 iPhone XS MAX Pro 
+						a(href="#").search_box_result_row 
+							img.lazyload.blur_up(data-src="images/main/index/cat2.png", alt="Search products category images") 
+							h4.h4 iPad XS MAX Pro 
+						a(href="#").search_box_result_row 
+							img.lazyload.blur_up(data-src="images/main/index/cat3.png", alt="Search products category images") 
+							h4.h4 Xiaomi Laptop Max Pro
+				// END SEARCH 
+
+			// END NAVIGATION
+
+
+
+			// USER INTERFACE BTN
+			.user_interface 	
+				// CALLBACK NUMBER
+				a(href="tel: *0666").callback_link  
+					+icon('call', 'tel_ico lazyload blur_up')
+					| *0666
+				// END CALLBACK NUMBER 
+				.lang_box 
+					select 
+						option az
+						option ru
+						option en
+				.menu_hamburger 
+					a(href="#")
+						+icon('menu', 'map_ico lazyload blur_up')
+				.search_box_btn
+					a(href="#")
+						+icon('search', 'map_ico lazyload blur_up')
+				//- .contacts_box
+				//- 	a(href="#")
+				//- 		+icon('map', 'map_ico lazyload blur_up') 
+				//- .auth_box 
+				//- 	.auth_box_icon 
+				//- 		+icon('user', 'map_ico lazyload blur_up') 
+				//- 		.auth_box_modal 
+				//- 			.auth_box_modal_wrap 
+				//- 				a(href="#") Войти
+				//- 				a(href="#") Зарегистрироваться
+			// END USER INTERFACE BTN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
